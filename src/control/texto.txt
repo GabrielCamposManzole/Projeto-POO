@@ -1,0 +1,1 @@
+controllers: Contém a lógica para lidar com as requisições HTTP (se for o caso), como as rotas e as validações.
