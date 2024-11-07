@@ -2,14 +2,21 @@ import Veiculo from "./Veiculo";
 
 export default class Cliente {
   private name!: string;
-  private CPF!: number;
-  private veiculos!: Veiculo[];
+  private cpf!: number;
 
-/*   constructor(nome: string, cpf: string) {
-    this.nome = nome;
+  public setNome(name: string): void {
+    this.name = name;
+  }
+
+  public getNome(): string {
+    return this.name;
+  }
+
+  public setCpf(cpf: number): void {
     this.cpf = cpf;
-    this.veiculos = [];
-}
- */
+  }
 
+  public getCpf(): number {
+    return this.cpf;
+  }
 }
