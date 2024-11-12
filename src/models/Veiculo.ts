@@ -1,5 +1,6 @@
 import TipoVeiculo from "./TipoVeiculo";
 
+
 export default class Veiculo {
   private placa: string;
   private modelo: string;

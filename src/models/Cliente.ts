@@ -1,6 +1,9 @@
+import Veiculo from "./Veiculo";
+
 export default class Cliente {
   private name!: string;
   private cpf!: number;
+  private veiculos: Veiculo[] = [];
 
   public setNome(name: string): void {
     this.name = name;
