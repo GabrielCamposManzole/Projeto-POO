@@ -11,4 +11,25 @@ export default class Veiculo {
     this.modelo = modelo;
     this.tipo = tipo;
   }
+
+  public getModelo(): string {
+    return this.modelo;
+  }
+
+  public setModelo(modelo: string): void {
+    this.modelo = modelo;
+  }
+
+  public getPlaca(): string {
+    return this.placa;
+  }
+
+  public setPlava(placa: string): void {
+    this.placa = placa;
+  }
+
+  public retornaTipo(): TipoVeiculo {
+    return this.tipo;
+  }
+
 }
