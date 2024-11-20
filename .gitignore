@@ -1,0 +1,23 @@
+# Desconsiderar diretórios gerados
+node_modules/
+dist/
+build/
+
+# Desconsiderar arquivos de configuração
+.env
+.env.local
+
+# Desconsiderar arquivos de cache
+npm-cache/
+.cache/
+
+# Desconsiderar arquivos de log
+logs/
+
+# Desconsiderar arquivos de testes
+tests/
+
+# Desconsiderar arquivos específicos
+*.log
+*.tmp
+*~
