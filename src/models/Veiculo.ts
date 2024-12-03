@@ -2,12 +2,13 @@
 export default class Veiculo {
   private placa: string;
   private modelo: string;
+  private cor: string;
  
     
-    constructor( placa: string, modelo: string, ) {
+    constructor( placa: string, modelo: string, cor: string ) {
       this.placa = placa;
       this.modelo = modelo;
-  
+      this.cor = cor; 
     }
 
     public getPlaca(): string {
@@ -25,6 +26,15 @@ export default class Veiculo {
     public setMOdelo(modelo: string): void {
       this.modelo = modelo;
     }
+
+    public getCor(): String {
+      return this.cor;
+    }
+
+    public setCor(cor: string): void {
+      this.cor = cor;
+    }
+
   }
 
   

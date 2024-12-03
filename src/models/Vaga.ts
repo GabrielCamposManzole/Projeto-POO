@@ -1,10 +1,12 @@
 export default class Vaga {
     private numero: number;
-    private tipo: string;
+    private tipoVaga: string;
+    private ocupada: boolean;
 
-    constructor( numero: number, tipo: string) {
-        this.tipo = tipo;
+    constructor( numero: number, tipo: string, ocupada: boolean) {
+        this.tipoVaga = tipo;
         this.numero = numero;
+        this.ocupada = ocupada;
     } 
 
     public getNumeroDaVaga(): number{
@@ -16,10 +18,10 @@ export default class Vaga {
     }
     
     public getTipoDaVaga(): string{
-        return this.tipo;
+        return this.tipoVaga;
     }
 
-    public setTipoDaVaga(tipo: string): void{
-        this.tipo = tipo;
+    public setTipoDaVaga(tipoVaga: string): void{
+        this.tipoVaga = tipoVaga;
     }
 }
