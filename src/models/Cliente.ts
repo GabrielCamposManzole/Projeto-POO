@@ -25,5 +25,13 @@ public setCpf(cpf: string): void{
   this.cpf = cpf;
 }
 
+public getTelefone(): number {
+  return this.telefone;
+}
+
+public setTelefone(telefone: number): void {
+  this.telefone = telefone;
+}
+
 
 }
