@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Vagas {
-    constructor() {
-        this.tipoDeVaga = ["Coberta, Ar livre"];
-    }
+class Vaga {
+    constructor(numero, tipo) {
+        this.numero = numero;
+        this.tipo = tipo;
+    } // tipo: coberta, descoberta
 }
-exports.default = Vagas;
+exports.default = Vaga;

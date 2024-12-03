@@ -1,10 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class TipoVeiculo {
-    constructor() {
-        this.carro = "carro";
-        this.moto = "moto";
-        this.caminhao = "caminhao";
-    }
-}
-exports.default = TipoVeiculo;
+var TipoVeiculo;
+(function (TipoVeiculo) {
+    TipoVeiculo["Carro"] = "carro";
+    TipoVeiculo["Moto"] = "moto";
+    TipoVeiculo["Caminhao"] = "caminhao";
+})(TipoVeiculo || (TipoVeiculo = {}));

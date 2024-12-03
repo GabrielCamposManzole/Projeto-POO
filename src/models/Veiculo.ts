@@ -1,3 +1,30 @@
-abstract class Veiculo {
-  constructor(public placa: string, public modelo: string, public tipo: TipoVeiculo) {}
-}
+
+export default class Veiculo {
+  private placa: string;
+  private modelo: string;
+ 
+    
+    constructor( placa: string, modelo: string, ) {
+      this.placa = placa;
+      this.modelo = modelo;
+  
+    }
+
+    public getPlaca(): string {
+      return this.placa;
+    }
+
+    public setPlaca(placa: string): void {
+      this.placa = placa;
+    }
+
+    public getModelo(): string {
+      return this.modelo;
+    }
+
+    public setMOdelo(modelo: string): void {
+      this.modelo = modelo;
+    }
+  }
+
+  

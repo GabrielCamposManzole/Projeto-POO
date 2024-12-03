@@ -1,5 +1,6 @@
-class ClienteAvulso extends Cliente {
-  constructor(nome: string, cpf: string, public horaEntrada: Date) {
-    super(nome, cpf);
-  }
+import Cliente from "./Cliente";
+
+export default  class ClienteAvulso extends Cliente {
+
+
 }

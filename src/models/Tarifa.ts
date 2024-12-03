@@ -1,5 +1,5 @@
-export default class Tarifa {
-  private tabelaTarifa!: number;
-  /* pesquisar sobre enum (outro enum)
-   */
+enum Tarifa {
+  carro = 14,
+  moto = 7,
+  caminhao = 24
 }

@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Veiculo {
     constructor(placa, modelo, tipo) {
         this.placa = placa;
@@ -7,4 +6,3 @@ class Veiculo {
         this.tipo = tipo;
     }
 }
-exports.default = Veiculo;
