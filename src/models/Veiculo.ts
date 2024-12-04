@@ -1,8 +1,10 @@
+//import  TipoVeiculo  from './TipoVeiculo';
 
 export default class Veiculo {
   private placa: string;
   private modelo: string;
   private cor: string;
+  private tipoVeiculo!: TipoVeiculo;
  
     
     constructor( placa: string, modelo: string, cor: string ) {
@@ -33,6 +35,14 @@ export default class Veiculo {
 
     public setCor(cor: string): void {
       this.cor = cor;
+    }
+
+    public getTipoVeiculo(): TipoVeiculo {
+      return this.tipoVeiculo;
+    }
+  
+    public setTipoVeiculo(tipoVeiculo: TipoVeiculo): void {
+      this.tipoVeiculo = tipoVeiculo;
     }
 
   }
