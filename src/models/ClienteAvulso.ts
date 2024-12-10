@@ -2,26 +2,26 @@
 import Cliente from './Cliente';
 
 export default class ClienteAvulso extends Cliente {
-    private ultimaCompra: Date;
+  // Podemos adicionar propriedades específicas para o ClienteAvulso, se necessário
+  private dataDeCadastro: Date;
 
-    constructor(nome: string, cpf: string, telefone: number, ultimaCompra: Date) {
-        super(nome, cpf, telefone);
-        this.ultimaCompra = ultimaCompra;
-    }
+  // O construtor chama o da classe pai e adiciona o comportamento adicional
+  constructor(nome: string, cpf: string, telefone: number, dataDeCadastro: Date) {
+    super(nome, cpf, telefone); // Chama o construtor da classe Cliente
+    this.dataDeCadastro = dataDeCadastro;
+  }
 
-    calcularTempoDesdeUltimaCompra(): number {
-        const hoje = new Date();
-        const diferencaEmMilisegundos = hoje.getTime() - this.ultimaCompra.getTime();
-        const dias = Math.floor(diferencaEmMilisegundos / (1000 * 60 * 60 * 24));
-        return dias;
-    }
+  // Método para calcular o tempo desde o cadastro do cliente avulso
+  calcularTempoDeCadastro(): number {
+    const hoje = new Date();
+    const diferencaEmMilisegundos = hoje.getTime() - this.dataDeCadastro.getTime();
+    const dias = Math.floor(diferencaEmMilisegundos / (1000 * 60 * 60 * 24));
+    return dias;
+  }
 
-    marcarNovaCompra(): void {
-        this.ultimaCompra = new Date();
-    }
-
-    ehClienteRecente(): boolean {
-        const diasDesdeUltimaCompra = this.calcularTempoDesdeUltimaCompra();
-        return diasDesdeUltimaCompra <= 30;
-    }
+  // Método para retornar se o cliente é recente (ex: menos de 30 dias de cadastro)
+  ehClienteRecente(): boolean {
+    const diasDesdeCadastro = this.calcularTempoDeCadastro();
+    return diasDesdeCadastro <= 30;
+  }
 }

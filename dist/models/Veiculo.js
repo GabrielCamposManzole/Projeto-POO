@@ -1,22 +1,19 @@
 "use strict";
-//import  TipoVeiculo  from './TipoVeiculo';
 Object.defineProperty(exports, "__esModule", { value: true });
 class Veiculo {
-    constructor(placa, modelo, cor) {
+    constructor(placa, modelo, cor, tipoVeiculo) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
+        this.tipoVeiculo = tipoVeiculo; // Inicializado no construtor
     }
     getPlaca() {
         return this.placa;
     }
-    setPlaca(placa) {
-        this.placa = placa;
-    }
     getModelo() {
         return this.modelo;
     }
-    setMOdelo(modelo) {
+    setModelo(modelo) {
         this.modelo = modelo;
     }
     getCor() {
