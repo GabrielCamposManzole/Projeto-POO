@@ -135,6 +135,6 @@ function registrarEntrada(): {
   return { cliente, veiculo };
 }
 
-// Exemplo de uso
+// Exemplo de uso a 
 const registro = registrarEntrada();
 console.log("\nRegistro completo:", registro);
