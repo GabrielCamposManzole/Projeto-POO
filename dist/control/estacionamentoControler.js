@@ -11,7 +11,7 @@ const Veiculo_1 = __importDefault(require("../models/Veiculo"));
 const promptSync = (0, prompt_sync_1.default)();
 // Função para validar o CPF
 function validarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    cpf = cpf.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
     if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf))
         return false; // CPF com todos os dígitos iguais
     let soma = 0;
@@ -40,49 +40,49 @@ function criarCliente() {
     let telefone;
     let dataDeCadastro = new Date(); // Inicializando a data de cadastro com a data atual
     do {
-        nome = promptSync('Digite o nome do cliente: ');
+        nome = promptSync("Digite o nome do cliente: ");
     } while (!nome);
     do {
-        cpf = promptSync('Digite o CPF do cliente: ');
+        cpf = promptSync("Digite o CPF do cliente: ");
         if (!validarCPF(cpf))
-            console.log('CPF inválido! Tente novamente.');
+            console.log("CPF inválido! Tente novamente.");
     } while (!validarCPF(cpf));
     do {
-        telefone = parseInt(promptSync('Digite o telefone do cliente (apenas números): '));
+        telefone = parseInt(promptSync("Digite o telefone do cliente (apenas números): "));
         if (isNaN(telefone))
-            console.log('Telefone inválido! Tente novamente.');
+            console.log("Telefone inválido! Tente novamente.");
     } while (isNaN(telefone));
-    console.log('Escolha o tipo de cliente:');
-    console.log('1 - Cliente Avulso');
-    console.log('2 - Cliente Mensalista');
+    console.log("Escolha o tipo de cliente:");
+    console.log("1 - Cliente Avulso");
+    console.log("2 - Cliente Mensalista");
     let tipoCliente;
-    const opcaoCliente = parseInt(promptSync('Escolha uma opção: '));
+    const opcaoCliente = parseInt(promptSync("Escolha uma opção: "));
     if (opcaoCliente === 1) {
         // Cliente Avulso
         tipoCliente = new ClienteAvulso_1.default(nome, cpf, telefone, dataDeCadastro);
     }
     else if (opcaoCliente === 2) {
         // Cliente Mensalista
-        const mensalidade = parseFloat(promptSync('Digite o valor da mensalidade: '));
+        const mensalidade = parseFloat(promptSync("Digite o valor da mensalidade: "));
         tipoCliente = new ClienteMensalista_1.default(nome, cpf, telefone, mensalidade);
     }
     else {
-        console.log('Opção inválida! Cliente definido como Avulso.');
+        console.log("Opção inválida! Cliente definido como Avulso.");
         tipoCliente = new ClienteAvulso_1.default(nome, cpf, telefone, dataDeCadastro);
     }
     return tipoCliente;
 }
 // Função para registrar o veículo do cliente
 function registrarVeiculo() {
-    const placa = promptSync('Digite a placa do veículo: ').toUpperCase();
-    const modelo = promptSync('Digite o modelo do veículo: ');
-    const cor = promptSync('Digite a cor do veículo: ');
-    console.log('Selecione o tipo de veículo:');
-    console.log('1 - Carro');
-    console.log('2 - Moto');
-    console.log('3 - Caminhão');
+    const placa = promptSync("Digite a placa do veículo: ").toUpperCase();
+    const modelo = promptSync("Digite o modelo do veículo: ");
+    const cor = promptSync("Digite a cor do veículo: ");
+    console.log("Selecione o tipo de veículo:");
+    console.log("1 - Carro");
+    console.log("2 - Moto");
+    console.log("3 - Caminhão");
     let tipoVeiculo;
-    const opcaoTipo = parseInt(promptSync('Escolha uma opção: '));
+    const opcaoTipo = parseInt(promptSync("Escolha uma opção: "));
     switch (opcaoTipo) {
         case 1:
             tipoVeiculo = TipoVeiculo_1.TipoVeiculo.Carro;
@@ -102,11 +102,13 @@ function registrarVeiculo() {
 }
 // Função principal para registrar a entrada do cliente e veículo
 function registrarEntrada() {
-    console.log('*** Registro de Entrada no Estacionamento ***');
     const cliente = criarCliente();
     const veiculo = registrarVeiculo();
-    console.log('\nCliente e veículo registrados com sucesso!');
-    console.log(`Cliente: ${cliente.getNome()}, CPF: ${cliente.getCpf()}, Telefone: ${cliente.getTelefone()}`);
+    console.log("*** Registro de Entrada no Estacionamento ***");
+    console.log("\nCliente e veículo registrados com sucesso!");
+    console.log(`Cliente: ${cliente.getNome()},
+     CPF: ${cliente.getCpf()}, 
+     Telefone: ${cliente.getTelefone()}`);
     if (cliente instanceof ClienteMensalista_1.default) {
         console.log(`Mensalidade: R$ ${cliente.getMensalidade().toFixed(2)}`);
     }
@@ -115,4 +117,4 @@ function registrarEntrada() {
 }
 // Exemplo de uso
 const registro = registrarEntrada();
-console.log('\nRegistro completo:', registro);
+console.log("\nRegistro completo:", registro);
