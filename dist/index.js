@@ -15,6 +15,6 @@ function criarClienteAvulso() {
     const novoCliente = new ClienteAvulso_1.default(nome, cpf, telefone, ultimaCompra);
     return novoCliente;
 }
-// Exemplo de uso
+/* // Exemplo de uso
 const cliente = criarClienteAvulso();
-console.log(cliente);
+console.log(cliente); */ 
