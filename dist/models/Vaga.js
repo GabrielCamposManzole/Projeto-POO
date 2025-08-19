@@ -1,28 +1,40 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Vaga = void 0;
 class Vaga {
-    constructor(numero, tipo, ocupada) {
-        this.tipoVaga = tipo;
+    constructor(numero, tipo) {
         this.numero = numero;
-        this.ocupada = ocupada;
+        this.tipo = tipo;
+        this.ocupada = false;
     }
-    getNumeroDaVaga() {
-        return this.numero;
+    ocuparVaga(veiculo) {
+        if (this.ocupada) {
+            console.log(`Vaga ${this.numero} já está ocupada.`);
+        }
+        else {
+            this.veiculo = veiculo;
+            this.ocupada = true;
+            console.log(`Veículo ${veiculo.getModelo()} estacionado na vaga ${this.numero}.`);
+        }
     }
-    setNumeroDaVaga(numero) {
-        this.numero = numero;
+    liberarVaga() {
+        if (!this.ocupada) {
+            console.log(`Vaga ${this.numero} já está livre.`);
+        }
+        else {
+            console.log(`Vaga ${this.numero} liberada.`);
+            this.veiculo = undefined;
+            this.ocupada = false;
+        }
     }
-    getTipoDaVaga() {
-        return this.tipoVaga;
-    }
-    setTipoDaVaga(tipoVaga) {
-        this.tipoVaga = tipoVaga;
-    }
-    getOcupada() {
+    isOcupada() {
         return this.ocupada;
     }
-    setOcupada(ocupada) {
-        this.ocupada = ocupada;
+    getNumero() {
+        return this.numero;
+    }
+    getTipo() {
+        return this.tipo;
     }
 }
-exports.default = Vaga;
+exports.Vaga = Vaga;
