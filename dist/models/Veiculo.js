@@ -14,6 +14,7 @@ export default class Veiculo {
         return this.modelo;
     }
     setModelo(modelo) {
+    setModelo(modelo) {
         this.modelo = modelo;
     }
     getAno() {

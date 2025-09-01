@@ -1,35 +1,47 @@
-export default class Vaga {
+import Veiculo from "./Veiculo";
+import { TipoVeiculo } from "./TipoVeiculo";
+
+export class Vaga {
   private numero: number;
-  private tipoVaga: string;
+  private tipo: TipoVeiculo;
   private ocupada: boolean;
+  private veiculo?: Veiculo;
 
-  constructor(numero: number, tipo: string, ocupada: boolean) {
-    this.tipoVaga = tipo;
+  constructor(numero: number, tipo: TipoVeiculo) {
     this.numero = numero;
-    this.ocupada = ocupada;
+    this.tipo = tipo;
+    this.ocupada = false;
   }
 
-  public getNumeroDaVaga(): number {
-    return this.numero;
+  ocuparVaga(veiculo: Veiculo): void {
+    if (this.ocupada) {
+      console.log(`Vaga ${this.numero} já está ocupada.`);
+    } else {
+      this.veiculo = veiculo;
+      this.ocupada = true;
+      console.log(`Veículo ${veiculo.getModelo()} estacionado na vaga ${this.numero}.`);
+    }
   }
 
-  public setNumeroDaVaga(numero: number): void {
-    this.numero = numero;
+  liberarVaga(): void {
+    if (!this.ocupada) {
+      console.log(`Vaga ${this.numero} já está livre.`);
+    } else {
+      console.log(`Vaga ${this.numero} liberada.`);
+      this.veiculo = undefined;
+      this.ocupada = false;
+    }
   }
 
-  public getTipoDaVaga(): string {
-    return this.tipoVaga;
-  }
-
-  public setTipoDaVaga(tipoVaga: string): void {
-    this.tipoVaga = tipoVaga;
-  }
-
-  public getOcupada(): boolean {
+  isOcupada(): boolean {
     return this.ocupada;
   }
 
-  public setOcupada(ocupada: boolean): void {
-    this.ocupada = ocupada;
+  getNumero(): number {
+    return this.numero;
+  }
+
+  getTipo(): TipoVeiculo {
+    return this.tipo;
   }
 }

@@ -1,20 +1,18 @@
-import prompt from 'prompt-sync';
-import ClienteAvulso from './models/ClienteAvulso';
+// Importando as classes que você já criou
+import EstacionamentoController from "./control/EstacionamentoController"; // Atualize conforme seu caminho
+import { Estacionamento } from "./models/Estacionamento"; // Atualize conforme seu caminho
+import { Tarifa } from "./models/Tarifa"; // Atualize conforme seu caminho
 
+// Função de inicialização
+function inicializarEstacionamento() {
+  // Criando o estacionamento com a tarifa correta
+  const tarifa = Tarifa.Carro; // Aqui estamos pegando o valor de 'Carro', que é 14
+  const estacionamento = new Estacionamento(tarifa); // Passando a tarifa para o construtor
+  const controller = new EstacionamentoController(estacionamento);
 
-const promptSync = prompt();
-
-// Função para criar um novo cliente avulso com dados fornecidos pelo usuário
-function criarClienteAvulso() {
-  const nome = promptSync('Digite o nome do cliente: ');
-  const cpf = promptSync('Digite o CPF do cliente: ');
-  const telefone = parseInt(promptSync('Digite o telefone do cliente: '));
-  const ultimaCompra = new Date(promptSync('Digite a data da última compra (YYYY-MM-DD): '));
-
-  const novoCliente = new ClienteAvulso(nome, cpf, telefone, ultimaCompra);
-  return novoCliente;
+  // Chama os métodos de interação, por exemplo, registrar entrada
+  controller.registrarEntrada(); // Exemplo de uso
 }
 
-// Exemplo de uso
-const cliente = criarClienteAvulso();
-console.log(cliente);
+// Inicializa o sistema
+inicializarEstacionamento();

@@ -1,50 +1,43 @@
-//import  TipoVeiculo  from './TipoVeiculo';
+import { TipoVeiculo } from './TipoVeiculo'; // Atualize o caminho conforme necessário
 
 export default class Veiculo {
-  private placa: string;
+  private readonly placa: string;
   private modelo: string;
   private cor: string;
-  private tipoVeiculo!: TipoVeiculo;
- 
-    
-    constructor( placa: string, modelo: string, cor: string ) {
-      this.placa = placa;
-      this.modelo = modelo;
-      this.cor = cor; 
-    }
+  private tipoVeiculo: TipoVeiculo; // Agora usa o enum diretamente
 
-    public getPlaca(): string {
-      return this.placa;
-    }
-
-    public setPlaca(placa: string): void {
-      this.placa = placa;
-    }
-
-    public getModelo(): string {
-      return this.modelo;
-    }
-
-    public setMOdelo(modelo: string): void {
-      this.modelo = modelo;
-    }
-
-    public getCor(): String {
-      return this.cor;
-    }
-
-    public setCor(cor: string): void {
-      this.cor = cor;
-    }
-
-    public getTipoVeiculo(): TipoVeiculo {
-      return this.tipoVeiculo;
-    }
-  
-    public setTipoVeiculo(tipoVeiculo: TipoVeiculo): void {
-      this.tipoVeiculo = tipoVeiculo;
-    }
-
+  constructor(placa: string, modelo: string, cor: string, tipoVeiculo: TipoVeiculo) {
+    this.placa = placa;
+    this.modelo = modelo;
+    this.cor = cor;
+    this.tipoVeiculo = tipoVeiculo; // Inicializado no construtor
   }
 
-  
+  public getPlaca(): string {
+    return this.placa;
+  }
+
+  public getModelo(): string {
+    return this.modelo;
+  }
+
+  public setModelo(modelo: string): void {
+    this.modelo = modelo;
+  }
+
+  public getCor(): string {
+    return this.cor;
+  }
+
+  public setCor(cor: string): void {
+    this.cor = cor;
+  }
+
+  public getTipoVeiculo(): TipoVeiculo {
+    return this.tipoVeiculo;
+  }
+
+  public setTipoVeiculo(tipoVeiculo: TipoVeiculo): void {
+    this.tipoVeiculo = tipoVeiculo;
+  }
+}

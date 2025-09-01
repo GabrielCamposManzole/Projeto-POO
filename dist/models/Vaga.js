@@ -1,7 +1,8 @@
 export default class Vaga {
     constructor(numero, ocupada) {
         this.numero = numero;
-        this.ocupada = ocupada;
+        this.tipo = tipo;
+        this.ocupada = false;
     }
     getNumero() {
         return this.numero;
@@ -12,7 +13,10 @@ export default class Vaga {
     isOcupada() {
         return this.ocupada;
     }
-    setOcupada(ocupada) {
-        this.ocupada = ocupada;
+    getNumero() {
+        return this.numero;
+    }
+    getTipo() {
+        return this.tipo;
     }
 }

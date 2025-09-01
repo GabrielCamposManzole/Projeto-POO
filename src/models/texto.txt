@@ -1,1 +1,0 @@
-models: Contém as definições das classes que representam os dados do sistema (Veículo, Cliente, Vaga, etc.).
