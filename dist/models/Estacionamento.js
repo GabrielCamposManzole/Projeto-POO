@@ -5,7 +5,7 @@ const Tarifa_1 = require("./Tarifa");
 const TipoVeiculo_1 = require("./TipoVeiculo");
 class Estacionamento {
     constructor(tarifa) {
-        this.tarifa = tarifa; // Agora a tarifa é recebida no construtor
+        this.tarifa = tarifa;
         this.vagas = [];
         this.historico = new Map();
     }

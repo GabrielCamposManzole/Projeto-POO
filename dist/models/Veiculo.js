@@ -5,7 +5,7 @@ class Veiculo {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
-        this.tipoVeiculo = tipoVeiculo; // Inicializado no construtor
+        this.tipoVeiculo = tipoVeiculo;
     }
     getPlaca() {
         return this.placa;

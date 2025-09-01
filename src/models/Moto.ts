@@ -6,8 +6,5 @@ export default class  Moto extends Veiculo {
     super(placa, modelo, cor, TipoVeiculo.Moto);
   }
 
-  // Método específico para Moto
-  empinar(): void {
-    console.log(`${this.getModelo()} está empinando!`);
-  }
+  
 }

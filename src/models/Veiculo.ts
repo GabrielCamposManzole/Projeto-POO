@@ -4,13 +4,13 @@ export default class Veiculo {
   private readonly placa: string;
   private modelo: string;
   private cor: string;
-  private tipoVeiculo: TipoVeiculo; // Agora usa o enum diretamente
+  private tipoVeiculo: TipoVeiculo; 
 
   constructor(placa: string, modelo: string, cor: string, tipoVeiculo: TipoVeiculo) {
     this.placa = placa;
     this.modelo = modelo;
     this.cor = cor;
-    this.tipoVeiculo = tipoVeiculo; // Inicializado no construtor
+    this.tipoVeiculo = tipoVeiculo; 
   }
 
   public getPlaca(): string {
