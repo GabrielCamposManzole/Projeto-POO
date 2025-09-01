@@ -1,28 +1,18 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Vaga {
-    constructor(numero, tipo, ocupada) {
-        this.tipoVaga = tipo;
+export default class Vaga {
+    constructor(numero, ocupada) {
         this.numero = numero;
         this.ocupada = ocupada;
     }
-    getNumeroDaVaga() {
+    getNumero() {
         return this.numero;
     }
-    setNumeroDaVaga(numero) {
+    setNumero(numero) {
         this.numero = numero;
     }
-    getTipoDaVaga() {
-        return this.tipoVaga;
-    }
-    setTipoDaVaga(tipoVaga) {
-        this.tipoVaga = tipoVaga;
-    }
-    getOcupada() {
+    isOcupada() {
         return this.ocupada;
     }
     setOcupada(ocupada) {
         this.ocupada = ocupada;
     }
 }
-exports.default = Vaga;

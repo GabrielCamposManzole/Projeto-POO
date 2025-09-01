@@ -1,35 +1,25 @@
-"use strict";
-//import  TipoVeiculo  from './TipoVeiculo';
-Object.defineProperty(exports, "__esModule", { value: true });
-class Veiculo {
-    constructor(placa, modelo, cor) {
-        this.placa = placa;
+export default class Veiculo {
+    constructor(marca, modelo, ano) {
+        this.marca = marca;
         this.modelo = modelo;
-        this.cor = cor;
+        this.ano = ano;
     }
-    getPlaca() {
-        return this.placa;
+    getMarca() {
+        return this.marca;
     }
-    setPlaca(placa) {
-        this.placa = placa;
+    setMarca(marca) {
+        this.marca = marca;
     }
     getModelo() {
         return this.modelo;
     }
-    setMOdelo(modelo) {
+    setModelo(modelo) {
         this.modelo = modelo;
     }
-    getCor() {
-        return this.cor;
+    getAno() {
+        return this.ano;
     }
-    setCor(cor) {
-        this.cor = cor;
-    }
-    getTipoVeiculo() {
-        return this.tipoVeiculo;
-    }
-    setTipoVeiculo(tipoVeiculo) {
-        this.tipoVeiculo = tipoVeiculo;
+    setAno(ano) {
+        this.ano = ano;
     }
 }
-exports.default = Veiculo;

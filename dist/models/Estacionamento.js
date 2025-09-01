@@ -1,25 +1,30 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Estacionamento {
-    getVaga() {
-        return this.vaga;
+export default class Estacionamento {
+    constructor(nome, endereco, capacidade) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.capacidade = capacidade;
+        this.clientes = [];
     }
-    getTaxaPorHora() {
-        const diferencaEmMilissegundos = this.dataHoraSaida.getTime() - this.dataHoraChegada.getTime();
-        const diferencaEmHoras = diferencaEmMilissegundos / (1000 * 60 * 60);
-        return this.taxaPorHora * diferencaEmHoras;
+    getNome() {
+        return this.nome;
     }
-    getDataHoraChegada() {
-        return this.dataHoraChegada;
+    setNome(nome) {
+        this.nome = nome;
     }
-    setDataHoraChegada(dataHoraChegada) {
-        this.dataHoraChegada = dataHoraChegada;
+    getEndereco() {
+        return this.endereco;
     }
-    getDataHoraSaida() {
-        return this.dataHoraSaida;
+    setEndereco(endereco) {
+        this.endereco = endereco;
     }
-    setDataHoraSaida(dataHoraSaida) {
-        this.dataHoraSaida = dataHoraSaida;
+    getCapacidade() {
+        return this.capacidade;
     }
+    setCapacidade(capacidade) {
+        this.capacidade = capacidade;
+    }
+    getClientes() {
+        return this.clientes;
+    }
+    
 }
-exports.default = Estacionamento;
