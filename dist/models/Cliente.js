@@ -1,5 +1,6 @@
-
-export default class Cliente {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Cliente {
     constructor(nome, cpf, telefone) {
         this.nome = nome;
         this.cpf = cpf;

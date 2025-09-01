@@ -1,14 +1,31 @@
-export default class Vaga {
-    constructor(numero, ocupada) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Vaga = void 0;
+class Vaga {
+    constructor(numero, tipo) {
         this.numero = numero;
         this.tipo = tipo;
         this.ocupada = false;
     }
-    getNumero() {
-        return this.numero;
+    ocuparVaga(veiculo) {
+        if (this.ocupada) {
+            console.log(`Vaga ${this.numero} já está ocupada.`);
+        }
+        else {
+            this.veiculo = veiculo;
+            this.ocupada = true;
+            console.log(`Veículo ${veiculo.getModelo()} estacionado na vaga ${this.numero}.`);
+        }
     }
-    setNumero(numero) {
-        this.numero = numero;
+    liberarVaga() {
+        if (!this.ocupada) {
+            console.log(`Vaga ${this.numero} já está livre.`);
+        }
+        else {
+            console.log(`Vaga ${this.numero} liberada.`);
+            this.veiculo = undefined;
+            this.ocupada = false;
+        }
     }
     isOcupada() {
         return this.ocupada;
@@ -20,3 +37,4 @@ export default class Vaga {
         return this.tipo;
     }
 }
+exports.Vaga = Vaga;

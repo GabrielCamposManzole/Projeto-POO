@@ -1,26 +1,32 @@
-export default class Veiculo {
-    constructor(marca, modelo, ano) {
-        this.marca = marca;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Veiculo {
+    constructor(placa, modelo, cor, tipoVeiculo) {
+        this.placa = placa;
         this.modelo = modelo;
-        this.ano = ano;
+        this.cor = cor;
+        this.tipoVeiculo = tipoVeiculo; // Inicializado no construtor
     }
-    getMarca() {
-        return this.marca;
-    }
-    setMarca(marca) {
-        this.marca = marca;
+    getPlaca() {
+        return this.placa;
     }
     getModelo() {
         return this.modelo;
     }
     setModelo(modelo) {
-    setModelo(modelo) {
         this.modelo = modelo;
     }
-    getAno() {
-        return this.ano;
+    getCor() {
+        return this.cor;
     }
-    setAno(ano) {
-        this.ano = ano;
+    setCor(cor) {
+        this.cor = cor;
+    }
+    getTipoVeiculo() {
+        return this.tipoVeiculo;
+    }
+    setTipoVeiculo(tipoVeiculo) {
+        this.tipoVeiculo = tipoVeiculo;
     }
 }
+exports.default = Veiculo;
